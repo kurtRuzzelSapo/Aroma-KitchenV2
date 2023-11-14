@@ -9,7 +9,20 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="left-card"></div>
+			<div class="left-card">
+				<img class="logo" src="./assets/Logo.png" alt="" />
+				<h1>Hey There!</h1>
+				<p>Login to get started in Aroma Kitchen</p>
+
+				<form action="" method="post">
+					<input
+						type="text"
+						name="username"
+						class="username"
+						placeholder="Your username" />
+					<input type="password" name="password" class="password" />
+				</form>
+			</div>
 			<div class="right-card"></div>
 		</div>
 	</body>
