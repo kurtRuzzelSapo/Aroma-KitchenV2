@@ -16,21 +16,41 @@
 }
 /* END CONTAINER */
 /* Left CARD */
+.left-card {
+	width: 70%;
+	margin: 0;
+}
 .logo {
-	max-width: 4%;
+	padding-top: 1rem;
+	padding-left: 3rem;
+	max-width: 7%;
 	background-size: cover;
 }
+.login {
+	display: flex;
+	flex-direction: column;
+}
+
 .login-button {
 	background-color: var(--button-color);
 }
 .title {
 	font-family: var(--font);
-	font-size: 5rem;
+	font-size: 6.5rem;
+}
+form {
+	display: flex;
+	flex-direction: column;
+}
+.description {
+	font-family: var(--font);
+	font-size: 1.3rem;
 }
 /* END LEFT CARD */
 
 /* RIGHT CARD */
 .right-card {
+	/* width: 45%; */
 	margin: 0;
 }
 .right-img {
