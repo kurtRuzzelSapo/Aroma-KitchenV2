@@ -97,6 +97,14 @@ input {
 	font-family: var(--font);
 	font-size: 1.3rem;
 }
+.sign-up-link {
+	color: #000;
+	font-family: Outfit;
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
 /* END LEFT CARD */
 
 /* RIGHT CARD */
