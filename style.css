@@ -42,6 +42,52 @@ form {
 	display: flex;
 	flex-direction: column;
 }
+input {
+	font-size: 1.5rem;
+}
+.username,
+.password {
+	margin-top: 3rem;
+	border-radius: 0.9375rem;
+	border: 3px solid #e1e1e1;
+	width: 31.125rem;
+	height: 5.4375rem;
+	flex-shrink: 0;
+}
+.username::placeholder {
+	padding-left: 1rem;
+	color: #828282;
+	font-family: Outfit;
+	font-size: 1.3125rem;
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+}
+.password::placeholder {
+	padding-left: 1rem;
+	color: #828282;
+	font-family: Outfit;
+	font-size: 1.3125rem;
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+}
+.login-button {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	width: 31.625rem;
+	height: 4.75rem;
+	border-radius: 3.8125rem;
+	background: #548235;
+	color: #fff;
+	text-align: center;
+	font-family: Outfit;
+	font-size: 1.3125rem;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	border: none;
+}
 .description {
 	font-family: var(--font);
 	font-size: 1.3rem;
