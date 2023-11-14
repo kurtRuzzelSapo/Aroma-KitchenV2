@@ -21,6 +21,7 @@
 						class="username"
 						placeholder="Your username" />
 					<input type="password" name="password" class="password" />
+					<button type="submit">Login</button>
 				</form>
 			</div>
 			<div class="right-card"></div>
