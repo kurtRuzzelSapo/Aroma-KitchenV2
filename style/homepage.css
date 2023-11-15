@@ -60,7 +60,7 @@
 }
 
 .logo {
-	margin: 0;
+	margin-right: auto;
 	max-width: 4%;
 	background-size: cover;
 	cursor: pointer;
@@ -74,9 +74,10 @@ a {
 	list-style: none;
 	color: black;
 }
+
 .nav-links li {
 	display: inline-block;
-	padding: 0px 20px;
+	padding: 0px 30px;
 }
 .nav-links li a {
 	transition: all 0.4s ease 0s;
@@ -85,8 +86,10 @@ a {
 	color: var(--button-color);
 }
 header {
+	width: 100%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
-	padding: 30px 10%;
+	padding: 20px 8%;
+	border-bottom: 1px solid black;
 }
