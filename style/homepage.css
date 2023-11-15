@@ -91,7 +91,7 @@ header {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	padding: 20px 11%;
+	padding: 20px 8%;
 	border-bottom: 1px solid black;
 }
 
@@ -174,7 +174,33 @@ input::placeholder {
 /* BTN SEARCH */
 
 /* END SEARCH SECTION */
+
+/* RECIPE SECTION */
 .recipe-sec {
 	width: 100%;
 	height: 150vh;
 }
+
+/* END RECIPE SECTION */
+
+/* FOOTER SECTION */
+.footer-sec {
+	display: flex;
+
+	align-items: center;
+	justify-content: flex-start;
+	background-image: url(../assets/footer-img.png);
+	width: 100%;
+	height: 20vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.logo-footer {
+	background-position: center;
+	background-size: cover;
+	max-width: 5%;
+	margin-left: 2rem;
+}
+/* END FOOTER SECTION */
