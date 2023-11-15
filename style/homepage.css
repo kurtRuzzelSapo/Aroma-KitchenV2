@@ -93,3 +93,34 @@ header {
 	padding: 20px 8%;
 	border-bottom: 1px solid black;
 }
+
+/* NAVBAR END */
+
+/* SEARCH SECTION */
+.search-sec {
+	background-image: url(../assets/search-section.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 27.5rem;
+	background-color: var(--button-color);
+}
+
+.title-search {
+	font-family: var(--font);
+	color: #fff;
+	font-family: Outfit;
+	font-size: 2.5rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	text-transform: capitalize;
+}
+.search {
+	width: 48.36144rem;
+	height: 6.9375rem;
+	border-radius: 2.1875rem;
+	border: 4px solid #548235;
+	background: #d9d9d9;
+}
