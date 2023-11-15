@@ -154,10 +154,11 @@ input::placeholder {
 /* BTN SEARCH */
 .btn-search {
 	display: none;
-	width: 5.5rem;
+	width: 10.5rem;
 	height: 4.75rem;
-	border-radius: 1rem;
-	background: #1e350f;
+	border-radius: 1.3125rem;
+	background-color: #63a13a;
+
 	color: #fff;
 	text-align: center;
 	font-family: Outfit;
@@ -166,7 +167,10 @@ input::placeholder {
 	font-weight: 600;
 	line-height: normal;
 	border: none;
-	transition: 0.5s ease-in-out;
+	transition: 0.3s ease-in-out;
+}
+.btn-search:hover {
+	background: #31501d;
 }
 .show-search {
 	display: inline-block;
