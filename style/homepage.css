@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Outfit:wght@500;700&display=swap');
+:root {
+	--button-color: #548235;
+	--font: 'Outfit', sans-serif;
+}
+
 .dropbtn {
 	background-color: #3498db;
 	color: white;
@@ -47,4 +53,9 @@
 	background-size: cover;
 	width: 70%;
 	height: 20%;
+}
+
+.logo {
+	max-width: 4%;
+	background-size: cover;
 }
