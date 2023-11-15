@@ -28,12 +28,17 @@
 		</header>
 		<section class="search-sec">
 			<h1 class="title-search">What Do You Want To Cook Today?</h1>
-			<input
-				type="search"
-				name="search"
-				class="search"
-				id="search"
-				placeholder="Find a recipe.." />
+			<form action="">
+				<input
+					onclick="btnSearch()"
+					type="search"
+					name="search"
+					class="search"
+					id="search"
+					placeholder="Find a recipe.." />
+				<button class="btn-search" type="submit">search</button>
+			</form>
 		</section>
+		<section class="recipe-sec"></section>
 	</body>
 </html>

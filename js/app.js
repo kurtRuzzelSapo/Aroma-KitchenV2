@@ -17,3 +17,20 @@ window.onclick = function (event) {
 		}
 	}
 };
+
+function btnSearch() {
+	document.querySelector('.btn-search').classList.toggle('show-search');
+}
+
+window.onclick = function (event) {
+	if (!event.target.matches('.search')) {
+		var dropdowns = document.getElementsByClassName('btn-search');
+		var i;
+		for (i = 0; i < dropdowns.length; i++) {
+			var openDropdown = dropdowns[i];
+			if (openDropdown.classList.contains('show-search')) {
+				openDropdown.classList.remove('show-search');
+			}
+		}
+	}
+};
