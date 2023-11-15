@@ -29,7 +29,6 @@
 
 .dropdown-content {
 	display: none;
-
 	position: absolute;
 	background-color: #f1f1f1;
 	min-width: 160px;
@@ -64,7 +63,7 @@
 	margin-right: auto;
 	max-width: 4%;
 	background-size: cover;
-	cursor: pointer;
+	/* cursor: pointer; */
 }
 
 ul li,
@@ -136,6 +135,7 @@ header {
 input {
 	padding-left: 1rem;
 	margin-bottom: 7rem;
+	padding-bottom: 0.5rem;
 	color: #000000;
 	font-family: Outfit;
 	font-size: 1.625rem;
@@ -143,6 +143,7 @@ input {
 	font-weight: 400;
 	line-height: normal;
 	caret-color: transparent;
+	outline: none;
 }
 input::placeholder {
 	padding-left: 1rem;
@@ -153,15 +154,18 @@ input::placeholder {
 	font-weight: 400;
 	line-height: normal;
 }
+input:focus {
+	outline: 2px solid white;
+}
 
 /* BTN SEARCH */
 .btn-search {
 	display: none;
 	width: 10.5rem;
 	height: 4.75rem;
-	border-radius: 1.3125rem;
+	/* border-radius: 1.3125rem; */
+	border-radius: 3.8125rem;
 	background-color: #63a13a;
-
 	color: #fff;
 	text-align: center;
 	font-family: Outfit;
@@ -250,3 +254,10 @@ input::placeholder {
 	stroke: var(--button-color);
 }
 /* SAVED RECIPES END */
+
+/* SAVED RECIPE DATA */
+.saved-recipe-data {
+	width: 100%;
+	height: 150vh;
+}
+/* SAVED RECIPE DATA END */
