@@ -120,3 +120,86 @@ input {
 	width: 100%;
 }
 /* END RIGHT CARD */
+/* LAPTOP */
+@media (max-width: 1010px) {
+	.right-card {
+		display: none;
+	}
+	.left-card {
+		width: 100%;
+	}
+}
+
+/* TABLET */
+@media (max-width: 520px) {
+	.title {
+		font-size: 3.5rem;
+	}
+	.description {
+		font-size: 0.8rem;
+	}
+
+	.password::placeholder {
+		padding-left: 1rem;
+		color: #828282;
+		font-family: Outfit;
+		font-size: 1.3125rem;
+		font-style: normal;
+		font-weight: 300;
+		line-height: normal;
+	}
+	.login-button {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		width: 21.625rem;
+		height: 2.75rem;
+		border-radius: 3.8125rem;
+	}
+	.username,
+	.password {
+		margin-top: 3rem;
+		border-radius: 0.9375rem;
+		border: 3px solid #e1e1e1;
+		width: 21.125rem;
+		height: 3.4375rem;
+		flex-shrink: 0;
+	}
+}
+/* PHONE */
+@media (max-width: 520px) {
+	.title {
+		font-size: 3.5rem;
+	}
+	.description {
+		font-size: 0.8rem;
+	}
+
+	.password::placeholder {
+		font-size: 1rem;
+	}
+	.username::placeholder {
+		font-size: 1rem;
+	}
+	.login-button {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		width: 17.625rem;
+		height: 2.75rem;
+		border-radius: 3.8125rem;
+		font-size: 1rem;
+	}
+
+	.username,
+	.password {
+		margin-top: 3rem;
+		border-radius: 0.9375rem;
+		border: 3px solid #e1e1e1;
+		width: 17.125rem;
+		height: 3.4375rem;
+		flex-shrink: 0;
+	}
+
+	.sign-up-link {
+		font-size: 0.8rem;
+	}
+}
