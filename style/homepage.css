@@ -267,4 +267,28 @@ input:focus {
 	width: 100%;
 	height: 270vh;
 }
+/* ============================================ */
+
+/* .type-input-section {
+	display: flex;
+} */
+
+.type-input-section input[type='radio'] {
+	display: none; /* Hide the default radio button */
+}
+
+.type-input-section label {
+	display: inline-block;
+	padding: 8px 12px;
+	margin-bottom: 5px;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.type-input-section input[type='radio']:checked + label {
+	background-color: #e0e0e0; /* Change background color when checked */
+	border: 1px solid #333; /* Change border color when checked */
+}
+
 /* CREATE RECIPE END */

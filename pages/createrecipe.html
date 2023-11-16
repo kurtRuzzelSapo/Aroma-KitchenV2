@@ -54,7 +54,57 @@
 						stroke-linejoin="round" /></svg
 			></a>
 		</section>
-		<section class="create-recipe-sec"></section>
+		<section class="create-recipe-sec">
+			<form action="" method="post">
+				<div class="title-input-section">
+					<label class="label-input">Title of Dish:</label>
+					<input type="text" name="title-dish" id="title-dish" />
+				</div>
+				<div class="picture-input-section">
+					<label class="label-input">Picture of Dish:</label>
+					<input type="file" name="picture-dish" id="picture-dish" />
+				</div>
+				<!-- TYPE DISH -->
+				<label class="label-input added">Type of Dish:</label>
+				<div class="type-input-section">
+					<input type="radio" name="type-dish" id="type-dish1" />
+					<label for="type-dish1">Breakfast</label>
+
+					<input type="radio" name="type-dish" id="type-dish2" />
+					<label for="type-dish2">Lunch</label>
+
+					<input type="radio" name="type-dish" id="type-dish3" />
+					<label for="type-dish3">Dinner</label>
+
+					<input type="radio" name="type-dish" id="type-dish4" />
+					<label for="type-dish4">Vegan</label>
+				</div>
+				<div class="description-input-section">
+					<label for="description">Description</label>
+					<textarea
+						id="freeform"
+						name="freeform"
+						rows="4"
+						cols="50"
+						placeholder="What is your Introduction about your Dish?">
+					</textarea>
+				</div>
+				<div class="steps-input-section">
+					<label for="steps">Steps</label>
+					<textarea
+						id="freeform"
+						name="freeform"
+						rows="4"
+						cols="50"
+						placeholder="lol">
+					</textarea>
+				</div>
+				<div class="submit-cancel">
+					<button type="reset">Cancel</button>
+					<button type="submit">Submit</button>
+				</div>
+			</form>
+		</section>
 		<footer class="footer-sec">
 			<img class="logo-footer" src="../assets/Logo.png" alt="" />
 		</footer>
