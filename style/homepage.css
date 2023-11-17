@@ -8,94 +8,6 @@
 	margin: 0;
 	padding: 0;
 }
-.dropbtn {
-	background-color: #3498db;
-	color: white;
-	padding: 16px;
-	font-size: 16px;
-	border: none;
-	cursor: pointer;
-}
-
-.dropbtn:hover,
-.dropbtn:focus {
-	background-color: #2980b9;
-}
-
-.dropdown {
-	position: relative;
-	display: inline-block;
-}
-
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f1f1f1;
-	min-width: 160px;
-	overflow: auto;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-}
-
-.dropdown-content a {
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-}
-.dropdown a:hover {
-	background-color: #ddd;
-}
-
-.show {
-	display: block;
-}
-.dropbtn {
-	background-image: url('https://i.pinimg.com/736x/22/d9/b7/22d9b702a49aedb04fb7cbdc446e8f2b.jpg');
-	border-radius: 100%;
-	background-position: center;
-	background-size: cover;
-	width: 3rem;
-	height: 3rem;
-}
-
-.logo {
-	margin-right: auto;
-	max-width: 4%;
-	background-size: cover;
-	/* cursor: pointer; */
-}
-
-ul li,
-a {
-	font-size: 1.1rem;
-	font-family: var(--font);
-	text-decoration: none;
-	list-style: none;
-	color: black;
-}
-
-.nav-links li {
-	display: inline-block;
-	padding: 0px 30px;
-}
-.nav-links li a {
-	transition: all 0.4s ease 0s;
-}
-.nav-links li a:hover {
-	color: var(--button-color);
-}
-#in-page {
-	color: var(--button-color);
-}
-header {
-	width: 100%;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	padding: 20px 8%;
-	border-bottom: 1px solid black;
-}
 
 /* NAVBAR END */
 
@@ -298,3 +210,7 @@ input:hover {
 /* CREATE RECIPE END */
 
 /*================QUERIES========= */
+
+/* NAVBAR */
+@media only screen and (max-width: 1320px) {
+}
