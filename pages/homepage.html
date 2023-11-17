@@ -6,19 +6,13 @@
 		<link rel="shortcut icon" href="../assets/Logo.png" type="image/x-icon" />
 		<link rel="stylesheet" href="../style/homepage.css" />
 		<script src="../js/app.js"></script>
+		<script src="../js/hamburger.js"></script>
 		<title>Aroma Kitchen</title>
 	</head>
-	<!-- <img class="logo" src="../assets/Logo.png" alt="" />
-	<div class="dropdown">
-		<button onclick="myFunction()" class="dropbtn"></button>
-		<div id="myDropdown" class="dropdown-content">
-			<a href="#home">Change profile</a>
-			<a href="#about">Logout</a>
-		</div>
-	</div> -->
+
 	<body>
 		<nav class="navbar">
-			<div class="brand-title">Brand Name</div>
+			<img class="logo" src="../assets/Logo.png" alt="" />
 			<a href="#" class="toggle-button">
 				<span class="bar"></span>
 				<span class="bar"></span>
@@ -26,9 +20,16 @@
 			</a>
 			<div class="navbar-links">
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="../pages/savedrecipe.html">Saved recipes</a></li>
+					<li><a href="../pages/createrecipe.html">Create recipes</a></li>
+					<li><a href="#">About us</a></li>
+					<div class="dropdown">
+						<button onclick="myFunction()" class="dropbtn"></button>
+						<div id="myDropdown" class="dropdown-content">
+							<a href="#home">Change profile</a>
+							<a href="../index.html">Logout</a>
+						</div>
+					</div>
 				</ul>
 			</div>
 		</nav>
