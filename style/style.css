@@ -202,4 +202,7 @@ input {
 	.sign-up-link {
 		font-size: 0.8rem;
 	}
+	input {
+		font-size: 1rem;
+	}
 }

@@ -109,7 +109,7 @@ header {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	width: 100%;
+	max-width: 100%;
 	height: 27.5rem;
 	background-color: var(--button-color);
 }
@@ -158,6 +158,10 @@ input:focus {
 	outline: 2px solid white;
 }
 
+input:hover {
+	outline: 2px solid white;
+}
+
 /* BTN SEARCH */
 .btn-search {
 	display: none;
@@ -177,7 +181,7 @@ input:focus {
 	transition: 0.3s ease-in-out;
 }
 .btn-search:hover {
-	background: #31501d;
+	background: #bbd24e;
 }
 .show-search {
 	display: inline-block;
@@ -292,3 +296,5 @@ input:focus {
 }
 
 /* CREATE RECIPE END */
+
+/*================QUERIES========= */
