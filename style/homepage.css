@@ -557,6 +557,7 @@ textarea {
 	textarea {
 		width: 30rem;
 		height: 14.3125rem;
+		border: 2px solid #69924e;
 	}
 
 	label {
