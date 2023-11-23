@@ -9,7 +9,6 @@
 		<script src="../js/hamburger.js"></script>
 		<title>Aroma Kitchen</title>
 	</head>
-
 	<body>
 		<nav class="navbar">
 			<img class="logo" src="../assets/Logo.png" alt="" />
@@ -20,9 +19,16 @@
 			</a>
 			<div class="navbar-links">
 				<ul>
-					<li><a href="../pages/savedrecipe.html">Saved recipes</a></li>
+					<li>
+						<a id="in-page" href="../pages/admin.html">Recipes</a>
+					</li>
+					<li>
+						<a href="../pages/listuser.html">Users</a>
+					</li>
+					<li>
+						<a href="../pages/createrecipe.html">Create recipes</a>
+					</li>
 
-					<li><a href="#">About us</a></li>
 					<div class="dropdown">
 						<button onclick="myFunction()" class="dropbtn"></button>
 						<div id="myDropdown" class="dropdown-content">
@@ -33,20 +39,10 @@
 				</ul>
 			</div>
 		</nav>
-		<section class="search-sec">
-			<h1 class="title-search">What Do You Want To Cook Today?</h1>
-			<form action="">
-				<input
-					onclick="btnSearch()"
-					type="search"
-					name="search"
-					class="search"
-					id="search"
-					placeholder="Find a recipe.." />
-				<button class="btn-search" type="submit">Search</button>
-			</form>
+		<section class="banner-sec">
+			<h1 class="saved-recipe-title">Recipes</h1>
 		</section>
-		<section class="recipe-sec"></section>
+		<section class="saved-recipe-data"></section>
 		<footer class="footer-sec">
 			<img class="logo-footer" src="../assets/Logo.png" alt="" />
 		</footer>
