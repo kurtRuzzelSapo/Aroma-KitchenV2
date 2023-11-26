@@ -2,7 +2,7 @@
 
 <?php
 // Include your database connection file or create a PDO connection here
-include('C:\Users\Administrator\Downloads\xammp\htdocs\Aroma-Kitchen\connection.php');
+include('php\connection.php');
 // $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
 // Initialize variables

@@ -1,23 +1,21 @@
 <?php
-// Create variable names for easy use.
-$host = 'localhost';
+
+// Database credentials
+$host = 'localhost'; // usually 'localhost' if the database is on the same server
 $dbname = 'projectdb';
-$user = 'root';
-$pass = '';
+$username = 'root';
+$password = '';
 
+// PDO connection
 try {
-    // Create a PDO connection. This is the default syntax.
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
-
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
     // Set the PDO error mode to exception
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Check the connection status is ok
-     if ($pdo) {
-         echo "Connected successfully";
-     } else {
-         echo "Connection failed";
-     }
+    echo "Connected successfully"; // You can remove or modify this line based on your needs
 } catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+    die("Connection failed: " . $e->getMessage());
 }
+
+// Now you can use the $pdo object for database operations
+
+?>
