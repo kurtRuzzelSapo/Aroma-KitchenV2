@@ -20,13 +20,13 @@
 			<div class="navbar-links">
 				<ul>
 					<li>
-						<a href="../pages/admin.html">Recipes</a>
+						<a href="admin.php">Recipes</a>
 					</li>
 					<li>
-						<a id="in-page" href="../pages/listuser.html">Users</a>
+						<a id="in-page" href="listuser.php">Users</a>
 					</li>
 					<li>
-						<a href="../pages/createrecipe.html">Create recipes</a>
+						<a href="createrecipe.php">Create recipes</a>
 					</li>
 
 					<div class="dropdown">

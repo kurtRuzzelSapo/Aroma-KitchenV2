@@ -21,7 +21,7 @@
 			<div class="navbar-links">
 				<ul>
 					<li><a href="savedrecipe.php">Saved recipes</a></li>
-					<li><a href="createrecipe.php">Create recipes</a></li>
+					
 					<li><a href="#">About us</a></li>
 					<div class="dropdown">
 						<button onclick="myFunction()" class="dropbtn"></button>
