@@ -20,15 +20,15 @@
 			</a>
 			<div class="navbar-links">
 				<ul>
-					<li><a href="../pages/savedrecipe.html">Saved recipes</a></li>
-					<li><a href="../pages/createrecipe.html">Create recipes</a></li>
+					<li><a href="savedrecipe.php">Saved recipes</a></li>
+					<li><a href="createrecipe.php">Create recipes</a></li>
 					<li><a href="#">About us</a></li>
 					<div class="dropdown">
 						<button onclick="myFunction()" class="dropbtn"></button>
 						<div id="myDropdown" class="dropdown-content">
 							<a href="#home">Change profile</a>
-							<a href="../index.html">Logout</a>
-						</div>
+							<a href="index.php">Logout</a>
+						</div>	
 					</div>
 				</ul>
 			</div>
