@@ -5,7 +5,7 @@ session_start();
 // Include your database connection file or create a PDO connection here
 include(__DIR__ . '/pagesPHP/connection.php');
 
-class User
+class Admin
 {
     private $pdo;
 
@@ -16,22 +16,22 @@ class User
 
     public function login($email, $enteredPassword)
     {
-        // Fetch user data from the database
-        $sql = "SELECT * FROM users WHERE email = :email";
+        // Fetch admin data from the database
+        $sql = "SELECT * FROM admin WHERE email = :email";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
 
         // Check if the email exists
         if ($stmt->rowCount() > 0) {
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-            $hashedPassword = $user['password'];
+            $admin = $stmt->fetch(PDO::FETCH_ASSOC);
+            $hashedPassword = $admin['password'];
 
             // Verify the entered password
             if (password_verify($enteredPassword, $hashedPassword)) {
                 // Password is correct, proceed with login
                 $_SESSION['login_success'] = "Login successful!";
-                header("Location: homepage.php");
+                header("Location: homepage_admin.php");
                 exit();
             } else {
                 // Password is incorrect
@@ -43,7 +43,7 @@ class User
         }
 
         // Redirect to the same page to display errors
-        header("Location: index.php");
+        header("Location: admin_login.php");
         exit();
     }
 }
@@ -55,8 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $enteredPassword = $_POST['password'];
 
     // Create a User instance and call the login method
-    $user = new User($pdo);
-    $user->login($email, $enteredPassword);
+    $admin = new Admin($pdo);
+    $admin->login($email, $enteredPassword);
 }
 ?>
 
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="left-card">
             <img class="logo" src="./assets/Logo.png" alt="" />
             <div class="login">
-                <h1 class="title">Hey There!</h1>
+                <h1 class="title">Hey Admin!</h1>
                 <p class="description">Login to get started in Aroma Kitchen</p>
 
                 <form action="" method="post">
@@ -87,19 +87,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <button class="login-button" type="submit">Login</button>
                 </form>
 
-                <p class="sign-up-link">
-                    Don't have an account? <a href="./pagesPHP/signup.php">Sign up</a>
-                </p>
+               
                 <label class="dropdown">
 
   <div class="dd-button">
-    User
+    Admin
   </div>
 
   <input type="checkbox" class="dd-input" id="test">
 
   <ul class="dd-menu">
-    <li><a class="admin_link" href="admin_login.php">Admin</a></li>
+    <li><a class="admin_link" href="index.php">User</a></li>
   </ul>
   
 </label>

@@ -4,6 +4,7 @@
 	--font: 'Outfit', sans-serif;
 }
 * {
+	text-decoration: none;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
@@ -234,8 +235,14 @@ input:hover {
 
 /* RECIPE SECTION */
 .recipe-sec {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
 	width: 100%;
-	height: 150vh;
+	height: auto;
+	margin: 20px 0;
 }
 
 /* END RECIPE SECTION */
@@ -252,6 +259,7 @@ input:hover {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	margin-top: 240px;
 }
 
 .logo-footer {
@@ -293,6 +301,7 @@ input:hover {
 	height: 2.1875rem;
 	flex-shrink: 0;
 }
+
 .back-saved-recipe:hover {
 	color: var(--button-color);
 }
@@ -304,13 +313,13 @@ input:hover {
 /* SAVED RECIPE DATA */
 .saved-recipe-data {
 	width: 100%;
-	height: 180vh;
+	height: 280vh;
 }
 /* SAVED RECIPE DATA END */
 
 /* CREATE RECIPE */
 .create-recipe-sec {
-	width: 90%;
+	width: 100%;
 	height: 200vh;
 	margin-left: 6.5em;
 	margin-top: 3rem;
@@ -605,6 +614,142 @@ textarea {
 	.submit-cancel {
 		width: 100%;
 	}
+}
+
+/* LIST RECIPES */
+
+/* Apply general styles to the recipe list */
+/* Apply general styles to the recipe list */
+.recipe-list {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr); /* Create a 4-column grid */
+	gap: 50px; /* Adjust the gap between items based on your design */
+	max-width: 1200px; /* Adjust the maximum width based on your design */
+	margin: 0 auto;
+	overflow-y: hidden;
+}
+.recipe-child {
+	overflow-y: hidden;
+	color: #000;
+	font-family: Outfit;
+	font-size: 1.1875rem;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+
+/* Style each recipe item */
+.recipe-item {
+	overflow-y: hidden;
+	box-sizing: border-box;
+	width: 250px; /* Fixed width for each recipe item */
+	height: 230px; /* Fixed height for each recipe item */
+	padding: 15px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	/* text-align: center; */
+	text-decoration: none;
+	color: #333;
+	transition: box-shadow 0.3s ease;
+	overflow: hidden; /* Ensure images don't overflow their container */
+}
+
+.recipe-item:hover {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Style the recipe image container */
+.recipe-item .image-container {
+	width: 100%;
+	height: 60%; /* Adjust the height based on your design */
+	overflow: hidden;
+	overflow-y: hidden;
+}
+
+/* Style the recipe image */
+.responsive-image {
+	width: 200px;
+	height: 100px;
+	object-fit: cover; /* Ensure the image covers the container */
+	border-radius: 8px; /* Add rounded corners to the image */
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+/* Style the recipe title */
+.recipe-item h3 {
+	margin-top: 15px;
+	font-size: 1.5em;
+}
+
+/* Style the Save button */
+.recipe-item button {
+	margin-top: 20px;
+	padding: 6px 20px; /* Smaller padding for the button */
+	font-size: 14px; /* Adjust the font size based on your design */
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.recipe-item button:hover {
+	background-color: #45a049;
+}
+
+/* EACH RECIPES */
+.rec-desc {
+	margin-top: 20px;
+	width: 80%;
+}
+
+.rec-table {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.rec-table img {
+	width: 50%;
+}
+.rec-table h1 {
+	color: #000100;
+	font-family: Outfit;
+	font-size: 3.6875rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}
+
+.rec-desc h1 {
+	color: #548235;
+	font-family: Outfit;
+	font-size: 3.25rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}
+.the-desc {
+	height: 60vh;
+	color: #140000;
+	font-family: ABeeZee;
+	font-size: 1.8125rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	margin-top: 20px;
+}
+.the-title {
+	margin-left: 20px;
+}
+.step {
+	width: 50%;
 }
 
 @media (max-width: 500px) {
