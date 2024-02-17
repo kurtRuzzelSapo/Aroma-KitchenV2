@@ -29,12 +29,6 @@ include('cr_backend.php');
         </a>
         <div class="navbar-links">
             <ul>
-            <li>
-                    <a href="listrecipe.php">Recipes</a>
-                </li>
-                <li>
-                    <a  href="listuser.php">Users</a>
-                </li>
                 <li>
                     <a id="in-page" href="createrecipe.php">Create recipes</a>
                 </li>
@@ -50,7 +44,7 @@ include('cr_backend.php');
     </nav>
     <section class="banner-sec">
         <h1 class="saved-recipe-title">Create Recipe</h1>
-        <a class="back-saved-recipe" href="homepage_admin.php">Back
+        <a class="back-saved-recipe" href="homepage.php">Back
             <svg class="back-arrow-saved" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
                 <path d="M30.5312 18.5382L6.46887 18.4618" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M16.2812 28.3368L6.46879 18.4618L16.3437 8.64935" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
@@ -60,7 +54,7 @@ include('cr_backend.php');
     <section class="create-recipe-sec">
         <form id="recipeForm" action="createrecipe.php" method="post" enctype="multipart/form-data">
 
-        <input type="hidden" name="selected-type" id="selected-type" value="" />
+            <input type="hidden" name="selected-type" id="selected-type" value="" />
             <div class="title-input-section">
                 <label class="label-input">Title of Dish:</label>
                 <input type="text" name="title-dish" class="title-dish" minlength="" maxlength="" size="" id="title-dish" required />
@@ -71,7 +65,12 @@ include('cr_backend.php');
             </div>
             <!-- TYPE DISH -->
             <label class="label-input added">Type of Dish:</label>
-            <div class="type-input-section">
+            <select name="type-dish" id="">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+            </select>
+            <!-- <div class="type-input-section">
                 <input type="radio" name="type-dish" id="type-dish1" onchange="handleRadioChange(this)" required />
                 <label for="type-dish1">Breakfast</label>
 
@@ -83,7 +82,7 @@ include('cr_backend.php');
 
                 <input type="radio" name="type-dish" id="type-dish4" onchange="handleRadioChange(this)" required />
                 <label for="type-dish4">Vegan</label>
-            </div>
+            </div> -->
             <div class="description-input-section">
                 <label for="description">Description</label>
                 <textarea id="description" name="description" required> </textarea>
