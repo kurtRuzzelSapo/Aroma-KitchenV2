@@ -622,9 +622,9 @@ textarea {
 /* Apply general styles to the recipe list */
 .recipe-list {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr); /* Create a 4-column grid */
-	gap: 50px; /* Adjust the gap between items based on your design */
-	max-width: 1200px; /* Adjust the maximum width based on your design */
+	grid-template-columns: repeat(4, 1fr);
+	gap: 50px;
+	max-width: 1200px;
 	margin: 0 auto;
 	overflow-y: hidden;
 }
@@ -704,6 +704,15 @@ textarea {
 }
 
 /* EACH RECIPES */
+
+.category {
+	background-color: blue;
+	padding: 0, 200px;
+	width: 100%;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
 .rec-desc {
 	margin-top: 20px;
 	width: 80%;

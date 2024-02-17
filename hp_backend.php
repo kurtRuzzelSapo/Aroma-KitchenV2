@@ -1,4 +1,3 @@
-
 <?php
 require(__DIR__ . '/pagesPHP/connection.php');
 session_start(); 
@@ -31,12 +30,53 @@ class Recipe
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getCategoryRecipe(){
+        $sql = "SELECT * FROM recipes";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function displayCategoryRecipe(){
+        $categoryRecipes = $this -> getCategoryRecipe();
+
+        if (!empty($categoryRecipes)) {
+            echo '<div class="category" style="
+            padding: 0, 200px;
+            width: 1090px;
+            height:10vh;
+            display: flex;
+            justify-content: start;
+            font-size:23px;
+            font-family: Outfit;
+            font-weight:1000;
+            align-items: center;">';         
+            echo'<h1>Breakfast Recipes</h1>';
+            echo '</div>';
+            echo '<div class="recipe-list">';
+            foreach ($categoryRecipes as $categoryRecipe) {
+                echo '<link rel="stylesheet" href="../style/homepage.css" />';
+                echo '<a href="recipe.php?id=' . $categoryRecipe['id'] . '"><div class="recipe-item">';
+                echo '<div class="recipe-child">'.'<img class="responsive-image" src="' . $categoryRecipe['url_dish'] . '"></img>'.'</div>';
+                echo '<h3 class="recipe-child">' . $categoryRecipe['title'] . '</h3>';
+                echo '<button>Save</button>';
+                echo '</div></a>';
+            }
+            echo '</div>';
+        } else {
+            echo '<p>No recipes found.</p>';
+        }
+
+    }
+
 
     public function displayRecipe($recipes)
 {
     // Check if there are recipes to display
     if (!empty($recipes)) {
+     
         echo '<ul class="recipe-list">';
+
         // homepage.php
 
 // Change the link for each recipe to point to recipe.php with the recipe ID
