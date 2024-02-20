@@ -45,6 +45,10 @@ a {
 	white-space: nowrap;
 }
 
+#button-3-small {
+	width: 90px;
+	height: 35px;
+}
 .button-3:focus:not(:focus-visible):not(.focus-visible) {
 	box-shadow: none;
 	outline: none;

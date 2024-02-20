@@ -12,7 +12,7 @@ include(__DIR__ . '/pagesPHP/connection.php');
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="../assets/Logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/Logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="./style/homepage.css" />
     <link rel="stylesheet" href="./style/new.css" />
     <script src="app.js"></script>
@@ -23,7 +23,7 @@ include(__DIR__ . '/pagesPHP/connection.php');
 
 <body>
     <nav class="navbar">
-        <img class="logo" src="../assets/Logo.png" alt="" />
+        <img class="logo" src="./assets/Logo.png" alt="" />
         <a href="#" class="toggle-button">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -55,6 +55,7 @@ include(__DIR__ . '/pagesPHP/connection.php');
         </form>
     </section>
     <main class="cat-container">
+        <button class="button-3"><a href="#">Home</a></button>
         <button class="button-3"><a href="#">Breakfast</a></button>
         <button class="button-3"><a href="#">Lunch</a></button>
         <button class="button-3"><a href="#">Dinner</a></button>

@@ -3,6 +3,7 @@ ini_set('memory_limit', '2048M');
 require(__DIR__ . '/pagesPHP/connection.php');
 // include('hp_backend.php');
 
+
 class RecipeHandler
 {
     private $pdo;
@@ -86,6 +87,7 @@ class RecipeHandler
         $recipes = $this->getRecipes($searchQuery);
 
         if (!empty($recipes)) {
+
             echo '<div  style="
             padding: 0, 200px;
             width: 1090px;
@@ -101,10 +103,13 @@ class RecipeHandler
             echo '</div>';
             echo '<div class="recipe-list">';
             foreach ($recipes as $recipe) {
-                echo '<link rel="stylesheet" href="../style/homepage.css" />';
                 echo '<a href="recipe.php?id=' . $recipe['id'] . '"><div class="recipe-item">';
-                echo '<div class="recipe-child">' . '<img class="responsive-image" src="' . $recipe['url_dish'] . '"></img>' . '</div>';
+                echo '<div class="recipe-child">' . '<img class="responsive-image" src="uploads/' . $recipe['url_dish'] . '"></img>' . '</div>';
                 echo '<h3 class="recipe-child">' . $recipe['title'] . '</h3>';
+                echo '<pc class="recipe-child" style="color: grey;
+                font-size: 15px;
+                text-align:left;
+                font-weight: 200;">' . $recipe['category'] . '</pc>';
                 echo '<button>Save</button>';
                 echo '</div></a>';
             }
@@ -147,10 +152,14 @@ class RecipeHandler
             echo '</div>';
             echo '<div class="recipe-list">';
             foreach ($categoryRecipes as $categoryRecipe) {
-                echo '<link rel="stylesheet" href="../style/homepage.css" />';
+
                 echo '<a href="recipe.php?id=' . $categoryRecipe['id'] . '"><div class="recipe-item">';
-                echo '<div class="recipe-child">' . '<img class="responsive-image" src="' . $categoryRecipe['url_dish'] . '"></img>' . '</div>';
+                echo '<div class="recipe-child">' . '<img class="responsive-image" src="uploads/' . $categoryRecipe['url_dish'] . '"></img>' . '</div>';
                 echo '<h3 class="recipe-child">' . $categoryRecipe['title'] . '</h3>';
+                echo '<pc class="recipe-child" style="color: grey;
+                font-size: 15px;
+                text-align:left;
+                font-weight: 200;">' . $categoryRecipe['category'] . '</pc>';
                 echo '<button>Save</button>';
                 echo '</div></a>';
             }
@@ -201,10 +210,13 @@ class RecipeHandler
             echo '</div>';
             echo '<div class="recipe-list">';
             foreach ($categoryRecipes as $categoryRecipe) {
-                echo '<link rel="stylesheet" href="../style/homepage.css" />';
                 echo '<a href="recipe.php?id=' . $categoryRecipe['id'] . '"><div class="recipe-item">';
-                echo '<div class="recipe-child">' . '<img class="responsive-image" src="' . $categoryRecipe['url_dish'] . '"></img>' . '</div>';
+                echo '<div class="recipe-child">' . '<img class="responsive-image" src="uploads/' . $categoryRecipe['url_dish'] . '"></img>' . '</div>';
                 echo '<h3 class="recipe-child">' . $categoryRecipe['title'] . '</h3>';
+                echo '<pc class="recipe-child" style="color: grey;
+                font-size: 15px;
+                text-align:left;
+                font-weight: 200;">' . $categoryRecipe['category'] . '</pc>';
                 echo '<button>Save</button>';
                 echo '</div></a>';
             }

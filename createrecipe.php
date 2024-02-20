@@ -21,7 +21,7 @@ include('cr_backend.php');
 
 <body>
     <nav class="navbar">
-        <img class="logo" src="../assets/Logo.png" alt="" />
+        <img class="logo" src="./assets/Logo.png" alt="" />
         <a href="#" class="toggle-button">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -29,9 +29,6 @@ include('cr_backend.php');
         </a>
         <div class="navbar-links">
             <ul>
-                <li>
-                    <a id="in-page" href="createrecipe.php">Create recipes</a>
-                </li>
                 <div class="dropdown">
                     <button onclick="myFunction()" class="dropbtn"></button>
                     <div id="myDropdown" class="dropdown-content">
@@ -60,15 +57,19 @@ include('cr_backend.php');
                 <input type="text" name="title-dish" class="title-dish" minlength="" maxlength="" size="" id="title-dish" required />
             </div>
             <div class="title-input-section">
+                <label class="label-input">Image of Dish:</label>
+                <input type="file" name="url-dish" id="title-dish" required />
+            </div>
+            <!-- <div class="title-input-section">
                 <label class="label-input">URL image of Dish:</label>
                 <input type="text" name="url-dish" class="title-dish" id="title-dish" required />
-            </div>
+            </div> -->
             <!-- TYPE DISH -->
             <label class="label-input added">Type of Dish:</label>
-            <select name="type-dish" id="">
-                <option value="breakfast">Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
+            <select name="type-dish" class="title-dish" id="category" style="font-size: 20px; font-weight:bold; width:10rem; margin-bottom:30px">
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
             </select>
             <!-- <div class="type-input-section">
                 <input type="radio" name="type-dish" id="type-dish1" onchange="handleRadioChange(this)" required />
