@@ -83,7 +83,7 @@ session_start();
             echo '<form action="code.php" method=post>';
             echo "<input style='border-radius:5px; font-size:25px; background-color: #548235; text-align:center; border:none; width:165px;' onmouseover=\"this.style.color='#F1F1F1'\" onmouseout=\"this.style.color='black'\" type='hidden' name='recipe_id' value='" . $recipeId . "'>";
             echo "<input style='border-radius:5px; font-size:25px; background-color: #548235; text-align:center; border:none; width:165px;' onmouseover=\"this.style.color='#F1F1F1'\" onmouseout=\"this.style.color='black'\" type='hidden' name='user_id' value='" . $user_id . "'>";
-            echo "<input style='border-radius:5px; font-size:25px; background-color: #548235; text-align:center; border:none; width:165px;' onmouseover=\"this.style.color='#F1F1F1'\" onmouseout=\"this.style.color='black'\" type='submit' name='save_recipe' value='Save Recipe'>";
+            echo "<input style='border-radius:5px; font-size:25px; background-color: #548235; text-align:justify; border:none; width:160px;' onmouseover=\"this.style.color='#F1F1F1'\" onmouseout=\"this.style.color='black'\" type='submit' name='save_recipe' value='Save Recipe'>";
             echo '</form>';
             echo '</div>';
             echo '</div>';

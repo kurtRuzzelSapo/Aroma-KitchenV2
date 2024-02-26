@@ -106,10 +106,10 @@ class RecipeHandler
                 echo '<a href="recipe.php?id=' . $recipe['id'] . '"><div class="recipe-item">';
                 echo '<div class="recipe-child">' . '<img class="responsive-image" src="uploads/' . $recipe['url_dish'] . '"></img>' . '</div>';
                 echo '<h3 class="recipe-child">' . $recipe['title'] . '</h3>';
-                echo '<pc class="recipe-child" style="color: grey;
+                echo '<p class="recipe-child" style="color: grey;
                 font-size: 15px;
                 text-align:left;
-                font-weight: 200;">' . $recipe['category'] . '</pc>';
+                font-weight: 200;">' . $recipe['category'] . '</p>';
                 echo '<button>Save</button>';
                 echo '</div></a>';
             }

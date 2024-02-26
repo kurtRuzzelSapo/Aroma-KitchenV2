@@ -10,16 +10,18 @@ class RecipeManager
         $this->pdo = $pdo;
     }
 
-    public function createRecipe($title, $new_image_name, $category, $description, $steps)
+    public function createRecipe($user, $creator, $title, $new_image_name, $category, $description, $steps)
     {
         // File upload
 
 
         // Prepare and execute the SQL query
-        $sql = "INSERT INTO recipes (title, url_dish ,  category, description, steps) 
-                VALUES (:title, :url_dish, :category, :description, :steps)";
+        $sql = "INSERT INTO recipes (user_id,creator, title, url_dish ,  category, description, steps) 
+                VALUES (:user,:creator, :title, :url_dish, :category, :description, :steps)";
 
         $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':user', $user);
+        $stmt->bindParam(':creator', $creator);
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':url_dish', $new_image_name);
         $stmt->bindParam(':category', $category);
@@ -27,10 +29,24 @@ class RecipeManager
         $stmt->bindParam(':steps', $steps);
 
         if ($stmt->execute()) {
-            echo "Recipe created successfully!";
+            echo '<script>
+            Swal.fire({
+                icon: "success",
+                title: "Success",
+                text: "Recipe created successfully!"
+            });
+          </script>';
+            echo 'tangina';
         } else {
             error_log("Error during recipe creation: " . implode(" ", $stmt->errorInfo()));
-            echo "An error occurred during recipe creation. Please try again later.";
+            echo '<script>
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+                footer: "<a href=\'#\'>Why do I have this issue?</a>"
+            });
+          </script>';
         }
 
         // Close the statement
@@ -53,6 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Collect form data
     // Collect form data
+    $creator = $_POST['creator'];
+    $user = $_POST['user-id'];
     $title = $_POST['title-dish'];
     $category = $_POST['type-dish'];
     $description = $_POST['description'];
@@ -75,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Create a RecipeManager instance and call the createRecipe method
     $recipeManager = new RecipeManager($pdo);
-    $recipeManager->createRecipe($title, $new_image_name, $category, $description, $steps);
+    $recipeManager->createRecipe($user, $creator, $title, $new_image_name, $category, $description, $steps);
     // Pass $urlDish as an argument
 
 }

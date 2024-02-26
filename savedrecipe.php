@@ -1,43 +1,6 @@
 <?php
-// Start the session
 session_start();
-
-// Include your database connection file or create a PDO connection here
 include(__DIR__ . '/pagesPHP/connection.php');
-
-class RecipeManager
-{
-    private $pdo;
-
-    public function __construct($pdo)
-    {
-        $this->pdo = $pdo;
-    }
-
-    public function getSavedRecipes($userID)
-    {
-        // Fetch saved recipes for the logged-in user
-        $sql = "SELECT * FROM recipes WHERE user_id = :userID";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':userID', $userID);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-}
-
-// Check if $_SESSION['id'] is set
-$userID = isset($_SESSION['id']) ? $_SESSION['id'] : null;
-
-// Create a RecipeManager instance
-$recipeManager = new RecipeManager($pdo);
-
-if ($userID !== null) {
-    // Fetch saved recipes for the logged-in user
-    $savedRecipes = $recipeManager->getSavedRecipes($userID);
-} else {
-    // Handle the case when $_SESSION['id'] is not set
-    $savedRecipes = [];
-}
 ?>
 
 
@@ -48,10 +11,12 @@ if ($userID !== null) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./assets/Logo.png" type="image/x-icon" />
-    <link rel="stylesheet" href="../style/homepage.css" />
-    <script src="../js/app.js"></script>
-    <script src="../js/hamburger.js"></script>
+    <link rel="stylesheet" href="./style/homepage.css" />
+    <script src="./js/app.js"></script>
+    <script src="./js/hamburger.js"></script>
     <script src="ajax_script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Aroma Kitchen</title>
 </head>
 
@@ -65,11 +30,9 @@ if ($userID !== null) {
         </a>
         <div class="navbar-links">
             <ul>
-                <li>
-                    <a id="in-page" href="savedrecipe.php">Saved recipes</a>
-                </li>
-                
-                <li><a href="#">About us</a></li>
+
+
+
                 <div class="dropdown">
                     <button onclick="myFunction()" class="dropbtn"></button>
                     <div id="myDropdown" class="dropdown-content">
@@ -91,23 +54,52 @@ if ($userID !== null) {
     </section>
     <section class="saved-recipe-data">
         <?php
-        // Check if there are saved recipes
-        if (!empty($savedRecipes)) {
-            echo '<ul class="recipe-list">';
-            foreach ($savedRecipes as $recipe) {
-                echo '<li class="recipe-item">';
-                echo '<h3>' . $recipe['title'] . '</h3>';
-                echo '<p>' . $recipe['picture_path'] . '</p>';
-                echo '<p>' . $recipe['description'] . '</p>';
-                echo '<p>' . $recipe['steps'] . '</p>';
-                // You can display other information as needed
-                echo '</li>';
+        try {
+            if (isset($_GET['id'])) {
+                $user_id = $_GET['id'];
+
+                $query = "SELECT recipes.id AS recipe_id, recipes.title, recipes.url_dish, recipes.creator
+                FROM savedrecipe
+                INNER JOIN recipes ON savedrecipe.recipe_id = recipes.id
+                WHERE savedrecipe.user_id = :user_id";
+
+                $stmt = $pdo->prepare($query);
+                $data = [
+                    ":user_id" => $user_id
+                ];
+                $stmt->execute($data);
+                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                if ($result) {
+                    foreach ($result as $row) {
+        ?>
+                        <div style=" background-color:#D9D9D9; margin-top: 20px;width:100%; display:flex; justify-content:space-between; align-items:center; margin-bottom: 10px">
+                            <div style="margin-left:5%;  display: flex; align-items:center;  ">
+                                <img style="margin-right:40px" class="responsive-image" src="uploads/<?= $row['url_dish']; ?>" alt="Recipe Image">
+                                <a href="recipe.php?id=<?= $row['recipe_id']; ?>" style="font-family: Outfit; font-size: 2.5rem; color:black"><?= $row['title']; ?></a>;
+                            </div>
+
+                            <form action="code.php" method="POST">
+                                <button style=" margin-right:160px; background-color:transparent; border:none" type="submit" value="<?= $row['recipe_id']; ?>" name="remove_recipe" class="btn btn-danger"><i style="font-size: 50px; color:#FF7A00" class="large material-icons ">delete</i></button>
+
+                            </form>
+                            <!-- Add any other details you want to display -->
+                        </div>
+                    <?php
+                    }
+                } else {
+                    ?>
+                    <p>No records found</p>
+        <?php
+                }
+            } else {
+                echo "User ID is not set.";
             }
-            echo '</ul>';
-        } else {
-            echo '<p>No saved recipes found.</p>';
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
         }
         ?>
+
     </section>
     <footer class="footer-sec">
         <img class="logo-footer" src="../assets/Logo.png" alt="" />
