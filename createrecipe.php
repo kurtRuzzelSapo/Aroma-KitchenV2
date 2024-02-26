@@ -4,22 +4,33 @@
 <?php
 // Include your database connection file
 include('pagesPHP\connection.php');
-include('cr_backend.php');
+// include('cr_backend.php');
+
+
 
 ?>
-
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="../assets/Logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/Logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="./style/homepage.css" />
-    <script src="../js/app.js"></script>
-    <script src="../js/hamburger.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/hamburger.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js
+"></script>
+    <link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css
+" rel="stylesheet">
     <title>Aroma Kitchen</title>
 </head>
 
 <body>
+    <?php
+    include('cr_backend.php');
+    ?>
     <nav class="navbar">
         <img class="logo" src="./assets/Logo.png" alt="" />
         <a href="#" class="toggle-button">
@@ -29,6 +40,15 @@ include('cr_backend.php');
         </a>
         <div class="navbar-links">
             <ul>
+
+                <?php
+                if (isset($_GET['id'])) {
+                    // Get the user ID from the URL
+                    $user_id = $_GET['id'];
+
+                    echo "<li> $user_id</li>";
+                }
+                ?>
                 <div class="dropdown">
                     <button onclick="myFunction()" class="dropbtn"></button>
                     <div id="myDropdown" class="dropdown-content">
@@ -48,13 +68,28 @@ include('cr_backend.php');
             </svg>
         </a>
     </section>
-    <section class="create-recipe-sec">
+    <section style="width: 50%;" class="create-recipe-sec">
         <form id="recipeForm" action="createrecipe.php" method="post" enctype="multipart/form-data">
 
             <input type="hidden" name="selected-type" id="selected-type" value="" />
+            <?php
+            if (isset($_GET['id'])) {
+                // Get the user ID from the URL
+                $user_id = $_GET['id'];
+
+
+                echo '<input type="hidden" name="user-id" value="' . $user_id . '" />';
+            }
+            ?>
+            <div class="title-input-section">
+                <label class="label-input">Creator:</label>
+                <input style="width: 20.5rem;
+	height: 2.625rem;" type="text" maxlength="11" name="creator" class="title-dish" minlength="" maxlength="" size="" id="title-dish" required placeholder="Your name" />
+            </div>
             <div class="title-input-section">
                 <label class="label-input">Title of Dish:</label>
-                <input type="text" name="title-dish" class="title-dish" minlength="" maxlength="" size="" id="title-dish" required />
+                <input style="width: 20.5rem;
+	height: 2.625rem;" type="text" name="title-dish" class="title-dish" minlength="" maxlength="" size="" id="title-dish" required />
             </div>
             <div class="title-input-section">
                 <label class="label-input">Image of Dish:</label>
@@ -66,7 +101,7 @@ include('cr_backend.php');
             </div> -->
             <!-- TYPE DISH -->
             <label class="label-input added">Type of Dish:</label>
-            <select name="type-dish" class="title-dish" id="category" style="font-size: 20px; font-weight:bold; width:10rem; margin-bottom:30px">
+            <select name="type-dish" class="title-dish" id="category" style="width:10rem; height: 2.625rem;font-size: 20px; font-weight:bold; margin-bottom:30px">
                 <option value="Breakfast">Breakfast</option>
                 <option value="Lunch">Lunch</option>
                 <option value="Dinner">Dinner</option>
@@ -99,8 +134,9 @@ include('cr_backend.php');
         </form>
     </section>
     <footer class="footer-sec">
-        <img class="logo-footer" src="../assets/Logo.png" alt="" />
+        <img class="logo-footer" src="./assets/Logo.png" alt="" />
     </footer>
+
 
 </body>
 
