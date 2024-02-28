@@ -8,9 +8,8 @@ session_start();
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="../assets/Logo.png" type="image/x-icon" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./assets/Logo.png" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/homepage.css" />
     <script src="hamburger.js"></script>
     <script src="get_recipes.js"></script>
@@ -30,15 +29,15 @@ session_start();
         </a>
         <div class="navbar-links">
             <ul>
-                <li><a href="savedrecipe.php">Saved recipes</a></li>
-                <li><a href="#">About us</a></li>
+                <!-- <li><a href="savedrecipe.php">Saved recipes</a></li>
+                <li><a href="#">About us</a></li> -->
                 <?php
-                if (isset($_SESSION['user_id'])) {
-                    $user_id = $_SESSION['user_id'];
-                    // Create the link with the user ID as a query parameter
-                    echo '<li><a href="createrecipe.php?id=' . $user_id . '">Create recipes</a></li>';
-                    echo '<li><a href="yourrecipe.php?id=' . $user_id . '">Your recipes</a></li>';
-                }
+                // if (isset($_SESSION['user_id'])) {
+                //     $user_id = $_SESSION['user_id'];
+                //     // Create the link with the user ID as a query parameter
+                //     echo '<li><a href="createrecipe.php?id=' . $user_id . '">Create recipes</a></li>';
+                //     echo '<li><a href="yourrecipe.php?id=' . $user_id . '">Your recipes</a></li>';
+                // }
                 ?>
                 <div class="dropdown">
                     <button onclick="myFunction()" class="dropbtn"></button>
@@ -53,12 +52,9 @@ session_start();
     <section class="banner-sec">
         <h1 class="saved-recipe-title">Your Recipes</h1>
         <a class="back-saved-recipe" href="homepage.php">Back
-            <svg class="back-arrow-saved" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37"
-                fill="none">
-                <path d="M30.5312 18.5382L6.46887 18.4618" stroke="black" stroke-width="3" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                <path d="M16.2812 28.3368L6.46879 18.4618L16.3437 8.64935" stroke="black" stroke-width="3"
-                    stroke-linecap="round" stroke-linejoin="round" />
+            <svg class="back-arrow-saved" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                <path d="M30.5312 18.5382L6.46887 18.4618" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16.2812 28.3368L6.46879 18.4618L16.3437 8.64935" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
         </a>
     </section>
@@ -70,9 +66,9 @@ session_start();
 
 
         <?php if (isset($_SESSION['message'])) : ?>
-        <h5 class="alert alert-success">
-            <?= $_SESSION['message']; ?>
-        </h5>
+            <h5 class="alert alert-success">
+                <?= $_SESSION['message']; ?>
+            </h5>
         <?php
             unset($_SESSION['message']);
         endif; ?>
@@ -104,34 +100,29 @@ session_start();
             if ($result) {
                 foreach ($result as $row) {
         ?>
-        <div
-            style=" background-color:#D9D9D9; margin-top: 20px;width:100%; display:flex; justify-content:space-between; align-items:center; margin-bottom: 10px">
-            <div style="margin-left:5%;  display: flex; align-items:center;  ">
-                <img style="margin-right:40px" class="responsive-image" src="uploads/<?= $row['url_dish']; ?>"
-                    alt="Recipe Image">
-                <h1 style="	font-family: Outfit;
+                    <div style=" background-color:#D9D9D9; margin-top: 20px;width:100%; display:flex; justify-content:space-between; align-items:center; margin-bottom: 10px">
+                        <div style="margin-left:5%;  display: flex; align-items:center;  ">
+                            <img style="margin-right:40px" class="responsive-image" src="uploads/<?= $row['url_dish']; ?>" alt="Recipe Image">
+                            <h1 style="	font-family: Outfit;
 	font-size: 2.5rem;"><?= $row['title']; ?></h1>
-            </div>
-            <div style="display: flex; width:20%; justify-content:space-between; align-items:center">
-                <a href="yourrecipe_edit.php?id=<?= $row['id']; ?>"><i style="font-size: 50px; color:#548235"
-                        class="large material-icons ">create</i></a>
-                <form action="code.php" method="POST">
-                    <button style=" margin-right:160px; background-color:transparent; border:none" type="submit"
-                        value="<?= $row['id']; ?>" name="delete_userrecipe" class="btn btn-danger"><i
-                            style="font-size: 50px; color:red" class="large material-icons ">delete</i></button>
-                </form>
-            </div>
-            <!-- Add any other details you want to display -->
-        </div>
+                        </div>
+                        <div style="display: flex; width:20%; justify-content:space-between; align-items:center">
+                            <a href="yourrecipe_edit.php?id=<?= $row['id']; ?>"><i style="font-size: 50px; color:#548235" class="large material-icons ">create</i></a>
+                            <form action="code.php" method="POST">
+                                <button style=" margin-right:160px; background-color:transparent; border:none" type="submit" value="<?= $row['id']; ?>" name="delete_userrecipe" class="btn btn-danger"><i style="font-size: 50px; color:red" class="large material-icons ">delete</i></button>
+                            </form>
+                        </div>
+                        <!-- Add any other details you want to display -->
+                    </div>
 
 
-        <?php
+                <?php
                 }
             } else {
                 ?>
-        <tr>
-            <td colspan="4">No records found</td>
-        </tr>
+                <tr>
+                    <td colspan="4">No records found</td>
+                </tr>
         <?php
             };
         } catch (PDOException $e) {

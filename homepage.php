@@ -34,28 +34,29 @@ include(__DIR__ . '/pagesPHP/connection.php');
         <div class="navbar-links">
             <ul>
 
+
                 <?php
                 if (isset($_SESSION['user_id'])) {
                     $user_id = $_SESSION['user_id'];
                     $email = $_SESSION['user_email'];
                 ?>
-                <script>
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 2000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.onmouseenter = Swal.stopTimer;
-                        toast.onmouseleave = Swal.resumeTimer;
-                    }
-                });
-                Toast.fire({
-                    icon: 'success',
-                    title: "You're signed as  <?php echo $email; ?>"
-                });
-                </script>
+                    <script>
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 2000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.onmouseenter = Swal.stopTimer;
+                                toast.onmouseleave = Swal.resumeTimer;
+                            }
+                        });
+                        Toast.fire({
+                            icon: 'success',
+                            title: "You're signed as  <?php echo $email; ?>"
+                        });
+                    </script>
                 <?php
                     // Create the link with the user ID as a query parameter
                     echo '<li><a href="savedrecipe.php?id=' . $user_id . '">Saved recipes</a></li>';

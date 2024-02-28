@@ -9,8 +9,7 @@ session_start();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../assets/Logo.png" type="image/x-icon" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/homepage.css" />
     <script src="hamburger.js"></script>
     <script src="get_recipes.js"></script>
@@ -52,12 +51,9 @@ session_start();
     <section class="banner-sec">
         <h1 class="saved-recipe-title">Your Recipes</h1>
         <a class="back-saved-recipe" href="homepage.php">Back
-            <svg class="back-arrow-saved" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37"
-                fill="none">
-                <path d="M30.5312 18.5382L6.46887 18.4618" stroke="black" stroke-width="3" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                <path d="M16.2812 28.3368L6.46879 18.4618L16.3437 8.64935" stroke="black" stroke-width="3"
-                    stroke-linecap="round" stroke-linejoin="round" />
+            <svg class="back-arrow-saved" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                <path d="M30.5312 18.5382L6.46887 18.4618" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16.2812 28.3368L6.46879 18.4618L16.3437 8.64935" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
         </a>
     </section>
@@ -65,10 +61,10 @@ session_start();
         <!-- Add your recipe list here -->
         <div class="container">
             <div class="row">
-                <div class="col-md-8 mt-4">
+                <div class="col-md-8 mt-5">
                     <div class="card">
                         <div class="card-header">
-                            <h3>Edit & Update Data
+                            <h3>Update your recipe
 
                         </div>
                         <div class="card-body">
@@ -90,29 +86,24 @@ session_start();
                             ?>
                             <form action="code.php" method="POST">
                                 <div class="mb">
-                                    <input type="hidden" name="id" id="" class="form-control"
-                                        value="<?= $result['id'] ?>">
+                                    <input type="hidden" name="id" id="" class="form-control" value="<?= $result['id'] ?>">
                                     <label for="username">Title</label>
-                                    <input type="text" name="title" id="" class="form-control"
-                                        value="<?= $result['title'] ?>">
+                                    <input type="text" name="title" id="" class="form-control" value="<?= $result['title'] ?>">
                                 </div>
                                 <label class="label-input added">Type of Dish:</label>
-                                <select name="type" value="<?= $result['category'] ?>" class="title-dish" id="category"
-                                    style="font-size: 20px; font-weight:bold; width:10rem; margin-bottom:30px">
+                                <select name="type" value="<?= $result['category'] ?>" class="title-dish" id="category" style="width:10rem; height: 2.625rem;font-size: 20px; font-weight:bold; margin-bottom:30px">
                                     <option value="Breakfast">Breakfast</option>
                                     <option value="Lunch">Lunch</option>
                                     <option value="Dinner">Dinner</option>
                                 </select>
                                 <div class="mb">
                                     <label for="email">Description</label>
-                                    <textarea id="description" name="description"
-                                        value="<?= $result['description'] ?>"><?= $result['description'] ?></textarea>
+                                    <textarea style="width: 50rem;" id="description" name="description" value="<?= $result['description'] ?>"><?= $result['description'] ?></textarea>
                                 </div>
 
                                 <div class="mb">
                                     <label for="password">Steps</label>
-                                    <textarea id="steps" name="steps"
-                                        value="<?= $result['description'] ?>"><?= $result['steps'] ?></textarea>
+                                    <textarea style="width: 50rem" ; id="steps" name="steps" value="<?= $result['description'] ?>"><?= $result['steps'] ?></textarea>
                                 </div>
                                 <div class="mb-3 mt-3 float-end">
                                     <button type="submit" name="update_recipe" class="btn btn-primary">Update
@@ -122,9 +113,7 @@ session_start();
                     </div>
                 </div>
             </div>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-                crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
             </script>
 
     </section>

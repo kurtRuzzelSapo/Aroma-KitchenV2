@@ -134,3 +134,30 @@ if (isset($_POST['remove_recipe'])) {
         echo $e->getMessage();
     }
 }
+
+//DELETE USER
+if (isset($_POST['delete_user'])) {
+    $id = $_POST['delete_user'];
+    try {
+        $query = "DELETE FROM users WHERE id=:id ";
+        $query_run = $pdo->prepare($query);
+
+        $data = [
+            ':id' => $id
+        ];
+
+        $query_execute = $query_run->execute($data);
+
+        if ($query_execute) {
+            $_SESSION['message'] = "Delete Successfully";
+            header('Location: listuser.php');
+            exit(0);
+        } else {
+            $_SESSION['message'] = " Process Unsuccessfully";
+            header('Location: listuser.php');
+            exit(0);
+        }
+    } catch (PDOException $e) {
+        echo $e->getMessage();
+    }
+}
