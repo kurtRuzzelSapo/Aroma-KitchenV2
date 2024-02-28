@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="../assets/Logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/Logo.png" type="image/x-icon" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <link rel="stylesheet" href="./style/homepage.css" />
@@ -28,16 +28,16 @@ session_start();
         <div class="navbar-links">
             <ul>
                 <?php
-                if (isset($_SESSION['user_id'])) {
-                    $user_id = $_SESSION['user_id'];
-                    $recipeIdParam = isset($_GET['id']) ? $_GET['id'] : null;
+                // if (isset($_SESSION['user_id'])) {
+                //     $user_id = $_SESSION['user_id'];
+                //     $recipeIdParam = isset($_GET['id']) ? $_GET['id'] : null;
                     // Create the link with the user ID as a query parameter
-                    echo '<li><a href="createrecipe.php?id=' . $user_id . '"> UserID:' . $user_id . '</a></li>';
-                    echo '<li><a href="yourrecipe.php?id=' . $user_id . '">RecipeID:' . $recipeIdParam . '</a></li>';
-                }
+                //     echo '<li><a href="createrecipe.php?id=' . $user_id . '"> UserID:' . $user_id . '</a></li>';
+                //     echo '<li><a href="yourrecipe.php?id=' . $user_id . '">RecipeID:' . $recipeIdParam . '</a></li>';
+                // }
                 ?>
-                <li><a href="savedrecipe.php">Saved recipes</a></li>
-                <li><a href="#">About us</a></li>
+                <!-- <li><a href="savedrecipe.php">Saved recipes</a></li>
+                <li><a href="#">About us</a></li> -->
                 <div class="dropdown">
                     <button onclick="myFunction()" class="dropbtn"></button>
                     <div id="myDropdown" class="dropdown-content">
@@ -51,9 +51,12 @@ session_start();
     <section class="banner-sec">
 
         <a class="back-saved-recipe" id="back" href="homepage.php">Back
-            <svg class="back-arrow-saved" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
-                <path d="M30.5312 18.5382L6.46887 18.4618" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M16.2812 28.3368L6.46879 18.4618L16.3437 8.64935" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            <svg class="back-arrow-saved" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37"
+                fill="none">
+                <path d="M30.5312 18.5382L6.46887 18.4618" stroke="black" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M16.2812 28.3368L6.46879 18.4618L16.3437 8.64935" stroke="black" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round" />
             </svg>
         </a>
     </section>

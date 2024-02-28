@@ -76,7 +76,7 @@ include(__DIR__ . '/pagesPHP/connection.php');
                         <div style=" background-color:#D9D9D9; margin-top: 20px;width:100%; display:flex; justify-content:space-between; align-items:center; margin-bottom: 10px">
                             <div style="margin-left:5%;  display: flex; align-items:center;  ">
                                 <img style="margin-right:40px" class="responsive-image" src="uploads/<?= $row['url_dish']; ?>" alt="Recipe Image">
-                                <a href="recipe.php?id=<?= $row['recipe_id']; ?>" style="font-family: Outfit; font-size: 2.5rem; color:black"><?= $row['title']; ?></a>;
+                                <a href="recipe.php?id=<?= $row['recipe_id'] ?>" style="font-family: Outfit; font-size: 2.5rem; color:black"><?= $row['title'] ?></a>
                             </div>
 
                             <form action="code.php" method="POST">
