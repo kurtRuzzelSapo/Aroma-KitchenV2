@@ -5,7 +5,7 @@ session_start();
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta `c`harset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./assets/Logo.png" type="image/x-icon" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -15,6 +15,16 @@ session_start();
     <script src="../js/hamburger.js"></script>
 
     <title>Aroma Kitchen</title>
+
+    <style>
+        .rec-desc.step ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 20px;
+            padding-top: 10px;
+            /* Add some padding to adjust the position of the bullet points */
+        }
+    </style>
 </head>
 
 <body>
@@ -31,7 +41,7 @@ session_start();
                 // if (isset($_SESSION['user_id'])) {
                 //     $user_id = $_SESSION['user_id'];
                 //     $recipeIdParam = isset($_GET['id']) ? $_GET['id'] : null;
-                    // Create the link with the user ID as a query parameter
+                // Create the link with the user ID as a query parameter
                 //     echo '<li><a href="createrecipe.php?id=' . $user_id . '"> UserID:' . $user_id . '</a></li>';
                 //     echo '<li><a href="yourrecipe.php?id=' . $user_id . '">RecipeID:' . $recipeIdParam . '</a></li>';
                 // }
@@ -51,12 +61,9 @@ session_start();
     <section class="banner-sec">
 
         <a class="back-saved-recipe" id="back" href="homepage.php">Back
-            <svg class="back-arrow-saved" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37"
-                fill="none">
-                <path d="M30.5312 18.5382L6.46887 18.4618" stroke="black" stroke-width="3" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                <path d="M16.2812 28.3368L6.46879 18.4618L16.3437 8.64935" stroke="black" stroke-width="3"
-                    stroke-linecap="round" stroke-linejoin="round" />
+            <svg class="back-arrow-saved" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                <path d="M30.5312 18.5382L6.46887 18.4618" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16.2812 28.3368L6.46879 18.4618L16.3437 8.64935" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
         </a>
     </section>
@@ -92,17 +99,23 @@ session_start();
             echo '</div>';
             echo '<img src="uploads/' . $recipe['url_dish'] . '"></img>';
             echo '</div>';
-            echo '<hr>';
+            echo '<hr  style="margin-bottom:30px;opacity: 20%; height:50px; background-color: black">';
             echo '<div class="rec-desc">';
             echo '<h1 class="t-desc">Description</h1>';
-            echo '<p class="the-desc">' . $recipe['description'] . '</p>';
+            echo '<p class="the-desc" style="font-size:20px">' . $recipe['description'] . '</p>';
             echo '</div>';
-            echo '<hr>';
-            echo '<div class="rec-desc step">';
+            echo '<hr  style="margin-bottom:30px;opacity: 20%; height:50px; background-color: black">';
+            echo '<div style="height:60vh; width: 95%; margin-bottom:50px" class="rec-desc step">';
             echo '<h1 class="t-desc">Steps</h1>';
-            echo '<p class="the-desc">' . $recipe['steps'] . '</p>';
-            echo '<a href="#back"></a>';
+            echo '<ul style="list-style-type: disc;">';
+            $steps = explode("\n", $recipe['steps']);
+            foreach ($steps as $step) {
+                echo '<li>' . $step . '</li>';
+            }
+            echo '</ul>';
+            // echo '<a href="#back"></a>';
             echo '</div>';
+            echo '<hr style="margin-bottom:30px;opacity: 20%; height:50px; background-color: black">';
         } else {
             echo '<p>Recipe not found.</p>';
         }
@@ -161,7 +174,7 @@ session_start();
             <?php
             if ($reviews) {
                 foreach ($reviews as $review) {
-                    echo "<p>User: {$review['email']} | Rating: {$review['rating']} | Comment: {$review['comment']}</p>";
+                    echo "<p style='border-bottom: 1px solid black; font-size: 20px; margin-bottom: 15px;'>User: {$review['email']} | Rating: {$review['rating']} | Comment: {$review['comment']}</p>";
                 }
             } else {
                 echo "<p>No reviews yet.</p>";
