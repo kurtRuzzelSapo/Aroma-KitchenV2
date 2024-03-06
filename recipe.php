@@ -17,13 +17,13 @@ session_start();
     <title>Aroma Kitchen</title>
 
     <style>
-        .rec-desc.step ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            font-size: 20px;
-            padding-top: 10px;
-            /* Add some padding to adjust the position of the bullet points */
-        }
+    .rec-desc.step ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        font-size: 20px;
+        padding-top: 10px;
+        /* Add some padding to adjust the position of the bullet points */
+    }
     </style>
 </head>
 
@@ -61,9 +61,12 @@ session_start();
     <section class="banner-sec">
 
         <a class="back-saved-recipe" id="back" href="homepage.php">Back
-            <svg class="back-arrow-saved" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
-                <path d="M30.5312 18.5382L6.46887 18.4618" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M16.2812 28.3368L6.46879 18.4618L16.3437 8.64935" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            <svg class="back-arrow-saved" xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37"
+                fill="none">
+                <path d="M30.5312 18.5382L6.46887 18.4618" stroke="black" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M16.2812 28.3368L6.46879 18.4618L16.3437 8.64935" stroke="black" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round" />
             </svg>
         </a>
     </section>
